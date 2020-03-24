@@ -1,7 +1,6 @@
 package TreesAndGraphs
 
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
 
 
@@ -62,15 +61,15 @@ fun bidirectionalSearch(s: Node, d: Node): Boolean {
 }
 
 private fun queueNeighbour(
-    visitedNodesS: HashSet<Node>,
-    nodeS: Node,
-    queueS: LinkedList<Node>
+    visitedNodes: HashSet<Node>,
+    node: Node,
+    queue: LinkedList<Node>
 ) {
-    visitedNodesS.add(nodeS)
-    for (sNodeChild in nodeS.children) {
-        if (!visitedNodesS.contains(sNodeChild)) {
-            queueS.add(sNodeChild)
-            visitedNodesS.add(sNodeChild)
+    visitedNodes.add(node)
+    for (sNodeChild in node.children) {
+        if (!visitedNodes.contains(sNodeChild)) {
+            queue.add(sNodeChild)
+            visitedNodes.add(sNodeChild)
         }
     }
 }
